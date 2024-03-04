@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Blog',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,8 @@ ROOT_URLCONF = 'Blog_Proje.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [  BASE_DIR / 'templates'#burda klasör olan templatesi buraya bağladık.
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,6 +118,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+
+]#dosyaların arasından diğer static dosyalrı aramak için bu parametreyi ekleriz.
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
