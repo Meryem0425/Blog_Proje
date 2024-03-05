@@ -2203,7 +2203,7 @@ File: Main Css File
 }
 
 .accordion-primary .accordion-item {
-  border-color: rgba(64, 81, 137, 0.6);
+  border-color: rgba(4, 17, 58, 0.6);
 }
 .accordion-primary .accordion-item .accordion-button {
   -webkit-box-shadow: none;
@@ -16213,7 +16213,7 @@ span.flatpickr-weekday {
   left: -20px;
   top: -20px;
   bottom: 20px;
-  border: 1px solid #299cdb;
+  border: 3px solid #003945 ;
   z-index: 0;
   border-radius: 0.25rem;
 }
