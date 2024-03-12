@@ -20,14 +20,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href={% url "about" %}>Hakkımızda</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#marketplace">Projeler</a>
+                    <li class="nav-item dropdown"> <!-- Projeler Menüsü -->
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Projeler
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#project1">Celsus Ar</a>
+                            <a class="dropdown-item" href="#project2">Hacettepe Ar</a>
+                            <!-- İhtiyacınıza göre diğer projeleri ekleyebilirsiniz -->
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#categories">Blog</a>
+                        <a class="nav-link" href="#marketplace">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#creators">İletişim</a>
+                        <a class="nav-link" href={% url "contact" %}>İletişim</a>
                     </li>
                 </ul>
 

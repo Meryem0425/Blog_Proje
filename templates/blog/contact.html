@@ -1,0 +1,143 @@
+{% extends 'my-partials/base.html' %}
+{% load static %}
+{% block title %}İletişim {% endblock title %}
+{% block css%}
+<style>
+    .my_section{
+        background-image: url('{% static 'images/iletisim-giris2.png' %}');
+        background-size:cover; 
+        background-position: center; 
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tam-sayfa-orta {
+        text-align: center;
+    }
+
+</style>
+ 
+    {% endblock css%}
+    
+    {%block content%}
+    <div class="main-content">
+
+
+            
+        <!-- start hero section -->
+    <div class="my_section ">
+        <div class="bg-overlay"></div>
+            <div class="container">
+            <div class="row ">
+                <div class="col-lg-12 tam-sayfa-orta" >
+                <h1 style="color:white; font-size:35px;" class="fw-semibold">İLETİŞİM</h1>
+            </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end hero section -->
+   
+        <!-- start wallet -->
+        <div class="section" id="contact" style="background-color:#DCDCDC">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h3 class="mb-3 fw-semibold">Bize Ulaşın</h3>
+                            <p class="text-muted mb-4 ff-secondary">Aşağıda bulunan formu doldurarak bizimle iletişime geçebilirsiniz. 24 saat içerisinde sizlere geri dönüş sağlayacağız.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="row gy-4">
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="mt-4">
+                                <h5 class="fs-13 text-muted text-uppercase">Ofisimiz</h5>
+                                <div class="ff-secondary fw-semibold">Manisa Teknoloji Geliştirme Bölgesi, Türkiye</div>
+                            </div>
+                        
+                            <div class="mt-4">
+                                <h5 class="fs-13 text-muted text-uppercase">Çalışma Saatlerimiz</h5>
+                                <div class="ff-secondary fw-semibold">9:00am to 6:00pm</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                    <div class="col-lg-8">
+                        <div>
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mb-4">
+                                            <label for="name" class="form-label fs-13">İsminiz</label>
+                                            <input name="name" id="name" type="text"
+                                                class="form-control bg-light border-light" placeholder="Adınızı Giriniz*">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-4">
+                                            <label for="email" class="form-label fs-13">E-posta</label>
+                                            <input name="email" id="email" type="text"
+                                                class="form-control bg-light border-light" placeholder="E-postanızı Giriniz*">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="mb-4">
+                                            <label for="subject" class="form-label fs-13">Konu</label>
+                                            <input type="text" class="form-control bg-light border-light" id="subject"
+                                                name="subject" placeholder="Konu Giriniz*" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="mb-3">
+                                            <label for="comments" class="form-label fs-13">Mesajınız</label>
+                                            <textarea name="comments" id="comments" rows="3"
+                                                class="form-control bg-light border-light"
+                                                placeholder="Mesajınızı Giriniz*"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 text-end">
+                                        <input type="submit" id="submit" name=Gonder" class="submitBnt btn btn-danger"
+                                            value="Gönder">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end contact -->
+        <div  style="background-color:	#DCDCDC">
+            <div class="col-lg-12">
+                <div class="row justify-content-center">
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3114.5920906466877!2d27.311963976444414!3d38.68124165942858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b9845fb8f0d3bb%3A0x9b4149d0f4eba2b!2sMCB%C3%9C%2C%20Teknokent!5e0!3m2!1str!2str!4v1710225227068!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+
+       <!--start back-to-top-->
+    
+    {% block footer %}
+    <!-- Start footer -->
+    {% include 'my-partials/footer.html' %}
+    <!-- end footer -->
+ 
+    <!--end back-to-top-->
+    {% endblock footer%}
+</div>
+
+{% endblock content%}

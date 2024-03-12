@@ -15,6 +15,22 @@
     .tam-sayfa-orta {
         text-align: center;
     }
+@media only screen and (max-width: 600px) {
+ 
+}
+.process-card {
+    text-align: center; /* Kart içindeki öğeleri ortala */
+}
+
+.image-container {
+    display: inline-block; /* Görüntüyü iç içe geçmiş bir öğe olarak görüntüle */
+}
+
+.image-container img {
+    max-width: 100%; /* Resmin genişliğini kartın genişliğine uygun hale getir */
+    height: auto; /* Oranları koru ve yüksekliği otomatik ayarla */
+}
+
 </style>
 {% endblock css%}
 
@@ -24,19 +40,19 @@
 
             
         <!-- start hero section -->
-        <section class="my_section ">
+        <div class="my_section ">
             <div class="bg-overlay"></div>
             <div class="container">
                 <div class="row ">
                     <div class="col-lg-12 tam-sayfa-orta" >
-                        <h1 style="color: white; font-size: 26px; font-family:sans-serif;">HAKKIMIZDA</h1>
+                        <h1 style="color: white; font-size: 35px;" class="fw-semibold">HAKKIMIZDA</h1>
                     </div><!-- end col -->
                 </div><!-- end row -->
             </div><!-- end container -->
-        </section><!-- end hero section -->
+        </div><!-- end hero section -->
         
         <!-- start wallet -->
-        <section class="section" style="background-color:#f3f9f9">
+        <div class="section" style="background-color:#f3f9f9">
                 <div class="container">
                     <div class="row align-items-center justify-content-lg-between justify-content-center gy-4">
                         
@@ -113,133 +129,177 @@
                     <!-- end row -->
                 </div>
                 <!-- end container -->
-            </section>
+            </div>
         <!-- start marketplace -->
-        <section class="section " style="background-color:#d9dee2"  id="">
-            <div class="container" >
+        <div class="section" style="background-color:white;">
+            
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-6">
                         <div class="text-center mb-5">
-                            <h1 class="mb-4 fw-semibold lh-base" style="color: black;">Sizlere Başarılı Çözümler Üretiyoruz</h1>
-                            <p class="text mb-4" style="color:black">Codeco Soft, mobil uygulama, VR ve AR alanlarında çözümler sunmakta ve profesyonel mühendislik çözümleri
-                                 sunuyoruz. Özellikle sanal gerçeklik ve artırılmış gerçeklik alanlarında deneyimli bir ekip ile, teknolojilerinin son 
-                                sürümlerini kullanarak çalışmaktayız ve müşterilerinin ihtiyaçlarını en iyi şekilde karşılamaktayız. </p>
-                        </div>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-                <div class="row">
-                    <div class="col-lg-4 product-item artwork crypto-card 3d-style">
-                        <div class="card explore-box card-animate h-100">
-                            
-                            <div class="explore-place-bid-img">
-                                <img src="{% static 'images/mobil-uyg.jpg' %}" alt="" class="card-img-top explore-img" />
-                                <div class="bg-overlay"></div>
-                            
-                            </div>
-                            <div class="card-body ">
-                                <h5 class="mb-1"><a href="">MOBİL UYGULAMA GELİŞTİRME</a></h5><br>
-                                <p class="mb-0" style="text-align: justify;">Mobil uygulama geliştirme, yazılım mühendislerini ve tasarımcıları bir araya getirerek kullanıcıların ihtiyaçlarını karşılayan benzersiz çözümler oluşturmayı hedefler. İlk adım genellikle bir fikrin belirlenmesiyle başlar. Geliştiriciler, kullanıcı ihtiyaçlarını ve beklentilerini anlamak için araştırmalar yaparlar. Ardından, tasarım aşamasında, uygulamanın kullanıcı arayüzü ve deneyimi planlanır.
-
-                                </p>
-                            </div>
-                            <div class="card-footer border-top border-top-dashed">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1 fs-14">
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-lg-4 product-item music crypto-card games">
-                        <div class="card explore-box card-animate h-100">
-                            <div class="bookmark-icon position-absolute top-0 end-0 p-2">
-                                <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
-                            </div>
-                            <div class="explore-place-bid-img">
-                                <img src="{% static 'images/sanal-ger.jpg' %}" alt="" class="card-img-top explore-img" />
-                                <div class="bg-overlay"></div>
-                            </div>
-                            <div class="card-body ">
-                            
-                                <h5 class="mb-1"><a href="">SANAL GERÇEKLİK</a></h5>
-                                <br>
-                                <p class=" mb-0" style="text-align: justify;">Sanal gerçeklik, genellikle bir dizi sensör, kameralar ve gözlük veya başlık gibi özel donanımlar kullanılarak gerçekleştirilir. Kullanıcının baş hareketleri, gözlük içindeki sensörler tarafından takip edilir ve bu bilgiler, bilgisayar tarafından oluşturulan sanal dünyaya gerçek zamanlı olarak aktarılır. Bu, kullanıcının hissettikleriyle görsel ve sesli bir deneyim yaşamasını sağlar.</p>
-                            </div>
-                            <div class="card-footer border-top border-top-dashed">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1 fs-14">
-                                    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 product-item artwork music games">
-                        <div class="card explore-box card-animate h-100">
-                            <div class="bookmark-icon position-absolute top-0 end-0 p-2">
-                                
-                            </div>
-                            <div class="explore-place-bid-img">
-                                <img src="{% static 'images/artırılmıs-ger.jpg' %}" alt="" class="card-img-top explore-img" />
-                                <div class="bg-overlay"></div>
-                            </div>
-                            <div class="card-body ">
-                                <h5 class="mb-1" ><a href="">ARTIRILMIŞ GERÇEKLİK</a></h5>
-                                <br>
-                                <p class="text mb-0" style="text-align: justify;">Artırılmış Gerçeklik, gerçek dünyadaki fiziksel ortamı sanal öğelerle birleştirir. Bu sanal öğeler, genellikle görüntü, ses, grafik veya 3D modeller şeklinde olabilir. AR, genellikle akıllı telefonlar, tabletler, gözlükler veya özel AR cihazları gibi taşınabilir cihazlar üzerinden deneyimlenir.</p>
-                                
-                            </div>
-                            <div class="card-footer border-top border-top-dashed">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1 fs-14">
-                                    </div>
-                                </div>
-                            </div>
+                            <h1 class="mb-3 fw-semibold">Teknolojinin Gücünü Kullanın!</h1>
+                            <p class="text-muted mb-4 ">Gelişmiş dijital çözümlerimizle, işinizi istediğiniz yönde geliştirebilir ve başarıya ulaşabilirsiniz.</p>
                         </div>
                     </div>
                 </div>
-            </div><!-- end container -->
-        </section>
+                
+                <!-- end row -->
+                
+                    
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5 d-flex align-items-center">
+                        <img src="{% static 'images/hakkımızda-ortaalan.png' %}" alt="Orta Resim" class="img-fluid mx-auto d-block">
+                    </div>
+                    </div>
+             
+                    <div class="row text-center">
+                        <div class="col-lg-3">
+                            <div class="process-card mt-4">
+                                <div class="mx-auto mb-4">
+                                    <div class="image-container" style="height: 50px ; width: 50px;">
+                                        <img src="{% static 'images/yolharitası.png' %}" alt="" class="img-fluid">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <h5>Strateji & Yol Haritası</h5>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- end col -->
+                    <div class="col-lg-3">
+                        <div class="process-card mt-4">
+                            <div class="mx-auto mb-4">
+                                <div class="image-container" style="height: 50px ; width: 50px;">
+                                    <img src="{% static 'images/görseltasarım.png' %}" alt="" class="img-fluid">
+                                </div>
+                                <br>
+                                <br>
+                                <h5>Görsel Tasarım</h5>
+
+                            </div>     
+                            
+                        </div>
+                    </div>
+                    <!-- end col -->
+                    <div class="col-lg-3">
+                        <div class="process-card mt-4">
+                            <div class="mx-auto mb-4">
+                                <div class="image-container" style="height: 50px ; width: 50px;">
+                                    <img src="{% static 'images/yazılımgel.png' %}" alt="" class="img-fluid">
+                                </div>
+                                <br>
+                                <br>
+
+                            <h5>Yazılım Geliştirme & Test Etme</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="process-card mt-4">
+                            <div class="mx-auto mb-4">
+                                <div class="image-container" style="height: 50px ; width: 50px;">
+                                    <img src="{% static 'images/izleme.png' %}" alt="" class="img-fluid">
+                                </div>
+                                <br>
+                                <br>
+                                <h5>Yayına Alma & İzleme</h5>
+
+                            </div>    
+                            
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+         
+        </div>
+        <!-- end Work Process -->
         <!-- end marketplace -->
 
         <!-- start features -->
-        <section class="section" style="background-color:#f3f9f9;">
+        <div class="section bg-light" id="team">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center mb-5">
-                            <h1 class="mb-3">BLOG</h1>
+                            <h3 class="mb-3 fw-semibold"> <span class="text-dark">Ekibimiz</span></h3>
                             
                         </div>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-                
+                    </div>
+                </div>
+                <!-- end row -->
                 <div class="row">
-                        <div class="col-lg-8 product-item artwork crypto-card 3d-style">
-                            <div class="card shadow-none" style="background-color:#f3f9f9;">
-                                <div class="card explore-box card-animate"> 
-                                    <div class="card-body" style="padding: 40px;">
-                                        <p class="mb-0" style="text-align: justify;">
-                                            Teknolojinin hızla geliştiği bir çağda yaşarken, sanal gerçeklik (VR) gibi yenilikçi teknolojiler sınırları zorluyor ve hayal gücümüzü gerçek dünyanın ötesine taşıyor. Sanal gerçeklik, kullanıcıları bilgisayar tarafından oluşturulan sanal bir ortamda deneyimler sunan ve duyularını gerçek dünyadan tamamen ayıran bir teknoloji olarak öne çıkıyor. Peki, sanal gerçeklik teknolojisinin gelişimi nasıl başladı ve bugün nerede duruyor?
-
-                                            Sanal Gerçekliğin Tarihçesi:
-                                        Sanal gerçeklik fikri, 20. yüzyılın ortalarına kadar gitse de, teknolojinin bugünkü şeklini alması uzun bir süreç gerektirdi. İlk VR deneyimleri, basit grafikler ve sınırlı hareket özgürlüğü ile karakterize edilirken, zamanla teknolojik ilerlemeler sayesinde daha etkileyici ve gerçekçi deneyimler sunulmaya başlandı. İlk VR başlıkları ve kontrol cihazları, kullanıcıların sanal dünyada etkileşime girmesini sağladı ve bu teknolojiyi daha geniş kitlelere ulaştırdı.
-                                        </p>
-                                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body text-center p-4">
+                                <div class="avatar-xl mx-auto mb-4 position-relative">
+                                    <img src="{% static 'images/users/avatar-2.jpg' %}" alt=""
+                                        class="img-fluid rounded-circle">
+                                    
                                 </div>
+                                <!-- end card body -->
+                                <h5 class="mb-1"><a href="" class="text-body">Süleyman DOĞAN</a></h5>
+                                <p class="text-muted mb-0 ff-secondary">Takım Lideri</p>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="card shadow-none" style="background-color:#f3f9f9;">
-                                <div class="card-body">
-                                    <img src="{% static 'images/blog.png' %}" alt="" class="card-img-top explore-img">
+                        <!-- end card -->
+                    </div>
+                    <!-- end col -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body text-center p-4">
+                                <div class="avatar-xl mx-auto mb-4 position-relative">
+                                    <img src="{% static 'images/users/avatar-10.jpg' %}" alt=""
+                                        class="img-fluid rounded-circle">
+                                    
                                 </div>
+                                <!-- end card body -->
+                                <h5 class="mb-1"><a href="" class="text-body">Hilal</a></h5>
+                                <p class="text-muted mb-0 ff-secondary">Tasarımcı</p>
                             </div>
-                        </div><!--end col-->
-                </div><!--end row-->
-                <a href="#!"  class="btn btn-danger" style="position: relative; top: -0px;">Daha Fazla<i class="ri-arrow-right-line align-bottom"></i></a>
-            </div><!-- end container -->
-        </section><!-- end features -->
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end col -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body text-center p-4">
+                                <div class="avatar-xl mx-auto mb-4 position-relative">
+                                    <img src="{% static 'images/users/avatar-3.jpg' %}" alt=""
+                                        class="img-fluid rounded-circle">
+                                    
+                                </div>
+                                <!-- end card body -->
+                                <h5 class="mb-1"><a href="" class="text-body">Mine ALTUĞ</a></h5>
+                                <p class="text-muted mb-0 ff-secondary">Backend Developer</p>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end col -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body text-center p-4">
+                                <div class="avatar-xl mx-auto mb-4 position-relative">
+                                    <img src="{% static 'images/users/avatar-8.jpg' %}" alt=""
+                                        class="img-fluid rounded-circle">
+                                    
+                                </div>
+                                <!-- end card body -->
+                                <h5 class="mb-1"><a href="" class="text-body">Meryem YONCALIK</a></h5>
+                                <p class="text-muted mb-0 ff-secondary">Frontend Developer</p>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+                
+                    
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end team -->
 
         <!-- start plan -->
         
@@ -247,7 +307,7 @@
         <!-- start Discover Items-->
     
         <!-- start cta -->
-        <section class="py-5 position-relative" style="background-color: #013e52;">
+        <div class="py-5 position-relative" style="background-color: #013e52;">
             <div class="bg-overlay bg-overlay-pattern opacity-50"></div>
             <div class="container">
                 <div class="row align-items-center gy-4">
@@ -272,7 +332,7 @@
                 <!-- end row -->
             </div>
             <!-- end container -->
-        </section>
+        </div>
         <!-- end cta -->
 
 
