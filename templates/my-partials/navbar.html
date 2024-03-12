@@ -25,13 +25,13 @@
                             Projeler
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#project1">Celsus Ar</a>
-                            <a class="dropdown-item" href="#project2">Hacettepe Ar</a>
-                            <!-- İhtiyacınıza göre diğer projeleri ekleyebilirsiniz -->
+                            <a class="dropdown-item" href={% url "celsusAr" %}>Celsus Ar</a>
+                            <a class="dropdown-item" href={% url "hacettepear" %}>Hacettepe Ar</a>
+                            
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#marketplace">Blog</a>
+                        <a class="nav-link" href={% url "blogs" %}>Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href={% url "contact" %}>İletişim</a>

@@ -1,0 +1,195 @@
+{% extends 'my-partials/base.html' %}
+{% load static %}
+{% block title %}İletişim {% endblock title %}
+{% block css%}
+<style>
+    .my_section{
+        background-image: url('{% static 'images/celsus2.jpg' %}');
+        background-size:cover; 
+        background-position: center; 
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tam-sayfa-orta {
+        text-align: center;
+    }
+
+</style>
+ 
+    {% endblock css%}
+    
+    {%block content%}
+    <div class="main-content">
+
+
+            
+        <!-- start hero section -->
+    <div class="my_section ">
+        <div class="bg-overlay"></div>
+            <div class="container">
+            <div class="row ">
+                <div class="col-lg-12 tam-sayfa-orta" >
+                <h1 style="color:white; font-size:35px;" class="fw-semibold">CELSUS AR</h1>
+            </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end hero section -->
+   
+        <!-- start wallet -->
+        <div class="section" id="contact" style="background-color:white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h3 class="mb-3 fw-semibold" style= "color: #001e23;">Celsus Kütüphanesi</h3>
+                            <p class="text mb-4 ff-secondary">Efes Antik Kenti’nin en önemli yapılarından biri olan Celsus Kütüphanesi, MS 110 - 135 yılları arasında Celsus onuruna oğlu Gaius Julius Aquila tarafından yaptırılmıştır.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+                  <!-- start features -->
+        <section class="section" >
+            <div class="container">
+                <div class="row align-items-center gy-4">
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="text">
+                         
+                            <p class="mb-4 ff-secondary" style="text-align: justify;">Celsus Kütüphanesi ile ilgili bilgilerin çoğu kütüphane yapısının çeşitli kısımlarında yazıtların sunduğu bilgilere dayanmaktadır. Bunlardan en önemlisi ve yapının doğu cephesinde, ortadaki giriş kapısının sağ tarafındaki üç blok üzerinde bir kısmı kırık olan yazıtta şöyle denilmektedir:
+ 
+                                "Asia proconsul 'ü Tiberius Iulius Celsus Polemaeanus için oğlu, consul Tiberius Iulius Celsus Polemaenus'un kendi serveti ile Celsus kütüphane binasını, bütün dekorasyonu ve sanat eserleri ve kitapları ile kurdu. Kütüphanenin korunması ve kitap alınması için 25.000 denarion 'u onun için (yani kütüphane) bir başlangıç olmak üzere miras bıraktı. Aquila 'nın mirasçıları onu tamamladılar ve vasiyete uygun olarak, bu yapı üç kez Asiarkhos olan Tiberius Claudius Ariston tarafından adandı"
+                                 
+                                Bu yazıt ile birlikte kütüphane cephesinin birinci katında bulunan arşitrav üzerindeki yazıtta da aynı bilgilerin tekrar edildiği görülmektedir.</p>
+
+                           
+                            
+                        </div>
+                    </div>
+                    <!-- end col -->
+                    <div class="col-lg-6 product-item artwork crypto-card 3d-style">
+                        <div class="card explore-box card-animate h-100">
+                            
+                            <div class="explore-place-bid-img">
+                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="card-img-top explore-img" />
+                                
+                            
+                            </div>
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+       
+        <!-- end marketplace -->
+            </div>
+        </div>
+
+        <section class="section " id="marketplace" style="background-color:#ECECEC;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h2 class="mb-3 fw-semibold lh-base"style="color: #001e23;font-size: 40px;">GALERİ</h2>
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+                <div class="row">
+                    <div class="col-lg-4 product-item artwork crypto-card 3d-style">
+                        <div class="card explore-box card-animate">
+                            <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"></button>
+                            </div>
+                            <div class="explore-place-bid-img">
+                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="card-img-top explore-img" />
+                                <div class="bg-overlay"></div>
+                               
+                            </div>
+                           
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 product-item artwork crypto-card 3d-style">
+                        <div class="card explore-box card-animate">
+                            <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"></button>
+                            </div>
+                            <div class="explore-place-bid-img">
+                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="card-img-top explore-img" />
+                                <div class="bg-overlay"></div>
+                               
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 product-item artwork crypto-card 3d-style">
+                        <div class="card explore-box card-animate">
+                            <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"></button>
+                            </div>
+                            <div class="explore-place-bid-img">
+                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="card-img-top explore-img" />
+                                <div class="bg-overlay"></div>
+                               
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 product-item artwork crypto-card 3d-style">
+                        <div class="card explore-box card-animate">
+                            <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"></button>
+                            </div>
+                            <div class="explore-place-bid-img">
+                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="card-img-top explore-img" />
+                                <div class="bg-overlay"></div>
+                               
+                            </div>
+                           
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 product-item artwork crypto-card 3d-style">
+                        <div class="card explore-box card-animate">
+                            <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"></button>
+                            </div>
+                            <div class="explore-place-bid-img">
+                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="card-img-top explore-img" />
+                                <div class="bg-overlay"></div>
+                               
+                            </div>
+                           
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 product-item artwork crypto-card 3d-style">
+                        <div class="card explore-box card-animate">
+                            <div class="bookmark-icon position-absolute top-0 end-0 p-2">
+                                <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"></button>
+                            </div>
+                            <div class="explore-place-bid-img">
+                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="card-img-top explore-img" />
+                                <div class="bg-overlay"></div>
+                               
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </section>
+    {% block footer %}
+    <!-- Start footer -->
+    {% include 'my-partials/footer.html' %}
+    <!-- end footer -->
+ 
+    <!--end back-to-top-->
+    {% endblock footer%}
+</div>
+{% endblock content%}
