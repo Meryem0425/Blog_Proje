@@ -1,0 +1,152 @@
+{% extends 'my-partials/base.html' %}
+{% load static %}
+{% block title %}İletişim {% endblock title %}
+{% block css%}
+<style>
+    .my_section{
+        background-image: url('{% static 'images/blogsayfası.jpg' %}');
+        background-size:cover; 
+        background-position: center; 
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tam-sayfa-orta {
+        text-align: center;
+        align-items: center;
+    }
+
+</style>
+    {% endblock css%}
+    
+    {%block content%}
+    <div class="main-content">
+
+
+            
+        <!-- start hero section -->
+    <div class="my_section ">
+        <div class="bg-overlay"></div>
+            <div class="container">
+            <div class="row ">
+                <div class="col-lg-12 tam-sayfa-orta" >
+                <h1 style="color:white; font-size:35px;" class="fw-semibold">Yapay Zeka Hakkında Gelişmeler</h1>
+            </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end hero section -->
+    <section style="background-color:#DCDCDC">
+        <div class="col-lg-12 justify-content-center" >
+            <div class="card">
+                <div class="card-header border-0" style="background-color:#DCDCDC ;">
+                    <div class="collaps show" id="collapseExample">
+                        <div class="row col-xxl-12  mt-3 g-3 " style="background-color:#DCDCDC ; float:center; display: flex;">
+                            <div class="col-xxl-2 col-lg-3">
+                                <h6 class="text-uppercase fs-12 mb-2">Search</h6>
+                                <input type="text" class="form-control" placeholder="Search product name" autocomplete="off" id="searchProductList">
+                            </div>
+                            <div class="col-xxl-2 col-lg-3">
+                                <h6 class="text-uppercase fs-12 mb-2">Select Category</h6>
+                                <select class="form-control" data-choices name="select-category" data-choices-search-false id="select-category">
+                                    <option value="">Select Category</option>
+                                    <option value="Artwork">Artwork</option>
+                                    <option value="3d Style">3d Style</option>
+                                    <option value="Photography">Photography</option>
+                                    <option value="Collectibles">Collectibles</option>
+                                    <option value="Crypto Card">Crypto Card</option>
+                                    <option value="Games">Games</option>
+                                    <option value="Music">Music</option>
+                                </select>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3">
+                                <h6 class="text-uppercase fs-12 mb-2">File Type</h6>
+                                <select class="form-control" data-choices name="file-type" data-choices-search-false id="file-type">
+                                    <option value="">File Type</option>
+                                    <option value="jpg">Images</option>
+                                    <option value="mp4">Video</option>
+                                    <option value="mp3">Audio</option>
+                                    <option value="gif">Gif</option>
+                                </select>
+                            </div>
+                           
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <section class="section" style="background-color:#f3f9f9">
+        <div class="container">
+            <div class="row align-items-center justify-content-lg-between justify-content-center gy-4">
+                
+                <div class="col-lg-4 col-sm-7">
+                    <div class="about-img-section mb-5 mb-lg-0 text-center">
+                    <div data-aos="fade-right">
+                    
+                        <img src="{% static 'images/yapayzeka.jpg' %}" alt="" class="img-fluid mx-auto rounded-3" />
+                </div>
+
+                    
+                    </div>
+                </div>
+                <div class="col-lg-1">
+
+                </div>
+                <div class="col-lg-7">
+                    <div class="text">
+                        <h1 class="mb-3 lh-base">Yapay Zeka Nedir? </h1>
+                        <p class="ff-secondary fs-16 mb-2" style="text-align: justify;">Yapay zeka (YZ), bilgisayar sistemlerine insan benzeri düşünme yetenekleri kazandırmak için tasarlanmış bir teknolojidir. Bu teknoloji, karmaşık görevleri gerçekleştirebilen, öğrenme yeteneğine sahip, problem çözebilen ve kararlar alabilen bilgisayar sistemleri geliştirmeyi amaçlar. Yapay zeka, geniş bir alanı kapsayan bir disiplindir ve birçok alt dalı bulunmaktadır.
+
+                            <p class="ff-secondary fs-16 mb-2" style="text-align: justify;">Yapay zeka uygulamaları şunları içerebilir:</p>
+                            
+                            <p class="ff-secondary fs-16 mb-2" style="text-align: justify;">Makine Öğrenimi (Machine Learning): Bilgisayar sistemlerinin deneyimlerinden öğrenmelerini sağlayan bir alt dal. Algoritmalar, veri analizi ve model oluşturma kullanarak sistemler, belirli görevlerde daha iyi performans göstermek için kendilerini iyileştirebilir.</p>
+                            
+                            <p class="ff-secondary fs-16 mb-2" style="text-align: justify;">Doğal Dil İşleme (Natural Language Processing - NLP): Bilgisayarların insan dilini anlamasını, yorumlamasını ve üretmesini sağlayan bir alandır. Sesli komutlar, metin analizi ve dil çevirisi gibi uygulamalarda kullanılır.</p>
+                            
+                            <p class="ff-secondary fs-16 mb-2" style="text-align: justify;">Görüntü İşleme: Bilgisayarların görsel verileri anlamasına ve işlemesine olanak tanır. Yüz tanıma, nesne tanıma ve görüntü sınıflandırma gibi uygulamalarda kullanılır.</p>
+                            
+                            <p class="ff-secondary fs-16 mb-2" style="text-align: justify;">Uzaktan Algılama ve Robotik: Yapay zeka, robotlar ve otomasyon sistemleri aracılığıyla çevrelerini algılamak ve uygun tepkileri vermek için kullanılabilir. Bu, endüstriyel robotlar, drone'lar ve otonom araçlar gibi alanlarda kullanım bulabilir.
+                            </p>
+                            <p class="ff-secondary fs-16 mb-2" style="text-align: justify;">Oyunlar ve Eğlence: Yapay zeka, oyunlarda rakiplerle rekabet edebilen akıllı karakterleri ve zorluk seviyelerini oluşturabilir. Ayrıca sanal gerçeklik ve artırılmış gerçeklik uygulamalarında da kullanılabilir.</p>
+                            
+                            <p class="ff-secondary fs-16 mb-2" style="text-align: justify;">Sağlık Hizmetleri: Yapay zeka, tıbbi teşhis, hastane yönetimi, ilaç geliştirme ve genetik analiz gibi sağlık sektöründe çeşitli uygulamalara sahiptir.</p>
+                            
+                            <p class="ff-secondary fs-16 mb-2" style="text-align: justify;">Finansal Analiz: Yapay zeka, finansal piyasaları izlemek, ticaret stratejileri oluşturmak ve dolandırıcılığı önlemek gibi finansal alanlarda kullanılabilir.</p>
+                            
+                            <p class="ff-secondary fs-16 mb-2" style="text-align: justify;">Yapay zeka, bilgisayarların karmaşık görevleri yerine getirmeleri ve öğrenmeleri için büyük potansiyele sahip olmasına rağmen, etik ve güvenilirlik gibi konular da dikkate alınmalıdır. Bu nedenle, yapay zekanın gelişimiyle birlikte etik standartlar ve yönergeler önem kazanmaktadır.</p>
+                            
+                            
+                            
+                            
+                            
+                            
+                            </p>
+                        
+                       
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+
+ 
+        <!-- end blog -->
+        <!-- end marketplace -->
+           
+
+    {% block footer %}
+    <!-- Start footer -->
+    {% include 'my-partials/footer.html' %}
+    <!-- end footer -->
+ 
+    <!--end back-to-top-->
+    {% endblock footer%}
+</div>
+{% endblock content%}
+ 

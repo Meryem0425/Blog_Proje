@@ -15,5 +15,9 @@ def celsusar(request):
 
 def hacettepear(request):
     return render(request,'blog/hacettepe_Ar.html')
+
 def blogs(request):
     return render(request,'blog/blogs.html')
+
+def blog_sayfa(request):
+    return render (request,'blog/blog_sayfa.html')
