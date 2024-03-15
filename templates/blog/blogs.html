@@ -1,6 +1,6 @@
 {% extends 'my-partials/base.html' %}
 {% load static %}
-{% block title %}İletişim {% endblock title %}
+{% block title %}Blog {% endblock title %}
 {% block css%}
 <style>
     .my_section{
@@ -48,231 +48,33 @@
                 <!-- end row -->
                 
                 <div class="row">
+                    {% for blog in repeat_times %}
                     <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="img-fluid rounded" />
+                                <img src={{blog.image}} alt="" class="img-fluid rounded" style="width: 400px; height: 400px;"/>
                             </div>
                             <div class="card-body">
                                 <ul class="list-inline fs-14 text-muted">
                                     <li class="list-inline-item">
-                                        <i class="ri-calendar-line align-bottom me-1"></i> 30 Oct, 2021
+                                        <i class="ri-calendar-line align-bottom me-1"></i>{{blog.date}}
                                     </li>
-                                    <li class="list-inline-item">
-                                        <i class="ri-message-2-line align-bottom me-1"></i> 364 Comment
-                                    </li>
+                                   
                                 </ul>
-                                <a href="javascript:void(0);">
-                                    <h5>Design your apps in your own way ?</h5>
+                                <a href="">
+                                    <h5>{{blog.name}}</h5>
                                 </a>
-                                <p class="text-muted fs-14">One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others.</p>
-                                
+                                <p class="text-muted fs-14">{{ blog.description|slice:":10" }}.</p>
+
+                    
                                 <div>
-                                    <a href="#!" class="link-success">Daha Fazla <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                                    <a href="{% url 'blog_detail' blog.id %}" class="link-success">Daha Fazla <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="img-fluid rounded" />
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-inline fs-14 text-muted">
-                                    <li class="list-inline-item">
-                                        <i class="ri-calendar-line align-bottom me-1"></i> 30 Oct, 2021
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="ri-message-2-line align-bottom me-1"></i> 364 Comment
-                                    </li>
-                                </ul>
-                                <a href="javascript:void(0);">
-                                    <h5>Design your apps in your own way ?</h5>
-                                </a>
-                                <p class="text-muted fs-14">One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others.</p>
-                                
-                                <div>
-                                    <a href="#!" class="link-success">Daha Fazla <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="img-fluid rounded" />
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-inline fs-14 text-muted">
-                                    <li class="list-inline-item">
-                                        <i class="ri-calendar-line align-bottom me-1"></i> 30 Oct, 2021
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="ri-message-2-line align-bottom me-1"></i> 364 Comment
-                                    </li>
-                                </ul>
-                                <a href="javascript:void(0);">
-                                    <h5>Design your apps in your own way ?</h5>
-                                </a>
-                                <p class="text-muted fs-14">One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others.</p>
-                                
-                                <div>
-                                    <a href={% url "blog_sayfası" %} class="link-success">Daha Fazla <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="img-fluid rounded" />
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-inline fs-14 text-muted">
-                                    <li class="list-inline-item">
-                                        <i class="ri-calendar-line align-bottom me-1"></i> 30 Oct, 2021
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="ri-message-2-line align-bottom me-1"></i> 364 Comment
-                                    </li>
-                                </ul>
-                                <a href="javascript:void(0);">
-                                    <h5>Design your apps in your own way ?</h5>
-                                </a>
-                                <p class="text-muted fs-14">One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others.</p>
-                                
-                                <div>
-                                    <a href="#!" class="link-success">Daha Fazla <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="img-fluid rounded" />
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-inline fs-14 text-muted">
-                                    <li class="list-inline-item">
-                                        <i class="ri-calendar-line align-bottom me-1"></i> 30 Oct, 2021
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="ri-message-2-line align-bottom me-1"></i> 364 Comment
-                                    </li>
-                                </ul>
-                                <a href="javascript:void(0);">
-                                    <h5>Design your apps in your own way ?</h5>
-                                </a>
-                                <p class="text-muted fs-14">One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others.</p>
-                                
-                                <div>
-                                    <a href="#!" class="link-success">Daha Fazla <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="img-fluid rounded" />
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-inline fs-14 text-muted">
-                                    <li class="list-inline-item">
-                                        <i class="ri-calendar-line align-bottom me-1"></i> 30 Oct, 2021
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="ri-message-2-line align-bottom me-1"></i> 364 Comment
-                                    </li>
-                                </ul>
-                                <a href="javascript:void(0);">
-                                    <h5>Design your apps in your own way ?</h5>
-                                </a>
-                                <p class="text-muted fs-14">One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others.</p>
-                                
-                                <div>
-                                    <a href="#!" class="link-success">Daha Fazla <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="img-fluid rounded" />
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-inline fs-14 text-muted">
-                                    <li class="list-inline-item">
-                                        <i class="ri-calendar-line align-bottom me-1"></i> 30 Oct, 2021
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="ri-message-2-line align-bottom me-1"></i> 364 Comment
-                                    </li>
-                                </ul>
-                                <a href="javascript:void(0);">
-                                    <h5>Design your apps in your own way ?</h5>
-                                </a>
-                                <p class="text-muted fs-14">One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others.</p>
-                                
-                                <div>
-                                    <a href="#!" class="link-success">Daha Fazla <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="img-fluid rounded" />
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-inline fs-14 text-muted">
-                                    <li class="list-inline-item">
-                                        <i class="ri-calendar-line align-bottom me-1"></i> 30 Oct, 2021
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="ri-message-2-line align-bottom me-1"></i> 364 Comment
-                                    </li>
-                                </ul>
-                                <a href="javascript:void(0);">
-                                    <h5>Design your apps in your own way ?</h5>
-                                </a>
-                                <p class="text-muted fs-14">One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others.</p>
-                                
-                                <div>
-                                    <a href="#!" class="link-success">Daha Fazla <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="{% static 'images/celsus-giris.png' %}" alt="" class="img-fluid rounded" />
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-inline fs-14 text-muted">
-                                    <li class="list-inline-item">
-                                        <i class="ri-calendar-line align-bottom me-1"></i> 30 Oct, 2021
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="ri-message-2-line align-bottom me-1"></i> 364 Comment
-                                    </li>
-                                </ul>
-                                <a href="javascript:void(0);">
-                                    <h5>Design your apps in your own way ?</h5>
-                                </a>
-                                <p class="text-muted fs-14">One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others.</p>
-                                
-                                <div>
-                                    <a href="#!" class="link-success">Daha Fazla <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {% endfor %}
+                
                     
                    
                 </div>
@@ -291,5 +93,8 @@
  
     <!--end back-to-top-->
     {% endblock footer%}
+    <button onclick="topFunction()" class="btn btn-danger btn-icon landing-back-top" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
 </div>
 {% endblock content%}

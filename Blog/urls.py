@@ -8,6 +8,7 @@ urlpatterns = [
     path('celsusAr/',views.celsusar, name="celsusAr"),
     path('hacettepeAr/',views.hacettepear, name="hacettepear"),
     path('blogs/',views.blogs, name="blogs"),
-    path('blog_sayfası/',views.blog_sayfa, name="blog_sayfası"),
+    path('blog_detail/<int:blog_id>/',views.blog_details, name="blog_detail"),
+    path('search_products/', views.search_products, name='search_products'),
    
     ]

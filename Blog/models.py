@@ -1,9 +1,18 @@
+
+import datetime
 from django.db import models
 
 
-class arama(models.Models):
-    name= models.CharField(max_lenght=255)
-    def __str__(self):
-        return self.name
-    
-# Create your models here.
+class arama(models.Model):
+    name= models.CharField(max_length=255)
+    description = models.TextField(max_length=1000,blank=True)  
+    image = models.ImageField(upload_to='static/images/' , blank=True, null=True)
+    date = models.DateTimeField(default=datetime.datetime.now,blank=True) 
+
+
+def __str__(self):
+    return self.name
+
+
+
+

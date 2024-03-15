@@ -65,10 +65,42 @@
         {%block footer%}
         {%endblock footer%}
         {% endblock content  %}
+        <div class="live-preview">
             
+            <div class="modal fade" id="exampleModalgrid" tabindex="-10" aria-labelledby="exampleModalgridLabel">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalgridLabel">Arama</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3"> 
+                            <div class="col-xxl-12">
+                                
+                                <div class="row">
+                                    
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="searchInput" placeholder="Search">
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                            <div class="col-xxl-12">
+                                <div>
+                                    <ul id="searchResults"></ul>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- JAVASCRIPT -->
+  
+ 
     <script src="{% static 'libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'libs/simplebar/dist/simplebar.min.js' %}"></script>
     <script src="{% static 'libs/node-waves/dist/waves.min.js' %}"></script>
@@ -76,9 +108,46 @@
     <script src="{% static 'js/pages/plugins/lord-icon-2.1.0.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
 
+    <!-- Modal Js -->
+    <script src="{% static 'js/pages/modal.init.js'%}"></script>
     <!--Swiper slider js-->
     <script src="{% static 'libs/swiper/swiper-bundle.min.js' %}"></script>
 
     <script src="{% static 'js/pages/nft-landing.init.js' %}"></script>
+    <!-- Sayfanın alt kısmı -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#searchInput').on('input', function () {
+            const query = $(this).val();
+            const my_url = "{% url 'search_products' %}"; 
+            const detailUrl = "{% url 'blog_detail' 0 %}"; // Örnek bir URL, ID yerine 0 koyuldu
+
+            $.ajax({ 
+                url: my_url,
+                data: { query: query },
+                success: function (data) {
+                    const resultsList = $('#searchResults');
+                    resultsList.empty();
+                    data.products.forEach(function (product) {
+                        // Kart şeklinde sonuçları göster
+                        const card = $('<div class="card" >').appendTo(resultsList);
+                        const cardBody = $('<div class="card-body">').appendTo(card);
+                        $('<h5 class="card-title">').text(product.name).appendTo(cardBody);
+                            $('<p class="card-text">').text(product.id).appendTo(cardBody);
+                        // Aşağıdaki satırda yönlendirme için bir link ekleyebilirsiniz
+                        card.click(function() {
+                            const redirectUrl = detailUrl.replace('0', product.id);
+                            // Yönlendirme işlemini gerçekleştirin
+                            window.location.href = redirectUrl;
+                        });
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+    
 </body>
 </html>
