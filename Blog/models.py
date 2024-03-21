@@ -7,7 +7,8 @@ class arama(models.Model):
     name= models.CharField(max_length=255)
     description = models.TextField(max_length=1000,blank=True)  
     image = models.ImageField(upload_to='static/images/' , blank=True, null=True)
-    date = models.DateTimeField(default=datetime.datetime.now,blank=True) 
+    date = models.DateField() 
+    
 
 
 def __str__(self):
