@@ -1,0 +1,155 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block title %}Admin{% endblock title %}
+{% block extra_css %}
+{% include "partials/page-title.html" with pagetitle="Base UI" title="Modals" %}
+
+    <!-- Plugins css -->
+    <link href="{% static 'libs/dropzone/dist/dropzone.css'%}" rel="stylesheet" type="text/css" />
+{% endblock extra_css %}
+{% block content %}
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        {% block pagetitle %}
+                        {% include "partials/page-title.html" with pagetitle="Ecommerce" title="Create Product" %}
+                        {% endblock pagetitle %}
+                        
+                     
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="card">
+                                        <div class="card-body">
+                                         
+                                            <div class="mb-3">
+                                                <label class="form-label" for="product-title-input">Blog Başlığı</label>
+                                                <input type="text" class="form-control" id="product-title-input" name="name" value="{{update_data.name}}" placeholder="Lütfen Blog Başlığı Giriniz"required>
+                                                <div class="invalid-feedback">Please Enter a product title.</div>
+                                            </div>
+                                            <div>
+                                                <label>Blog İçeriği</label>
+                                                
+                                                <div id="ckeditor-classic">
+                                                    <p>{{update_data.description}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end card -->
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title mb-0">Blog Galerisi</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="mb-4">
+                                                <h5 class="fs-14 mb-1">Blog Görselleri</h5>
+                                                <p class="text-muted">Blog Görselleri Ekleyin...</p>
+                                                <div class="text-center">
+                                                    <div class="position-relative d-inline-block">
+                                                        <div class="position-absolute top-100 start-100 translate-middle">
+                                                            <img src="{{update_image}}" style="width:100px;">
+                                                            
+                                                        </div>
+                                                        <div class="avatar-lg">
+                                                            <div class="avatar-title bg-light rounded">
+                                                                <img src="" id="product-img" class="avatar-md h-auto" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h5 class="fs-14 mb-1">Blog Galerisi</h5>
+                                                <p class="text-muted">Blog Galerisi Ekleyin...</p>
+
+                                                <div class="dropzone">
+                                                    <div class="fallback">
+                                                        <input name="file" type="file" multiple="multiple">
+                                                    </div>
+                                                    <div class="dz-message needsclick">
+                                                        <div class="mb-3">
+                                                            <i class="display-4 text-muted ri-upload-cloud-2-fill"></i>
+                                                        </div>
+        
+                                                        <h5>Dosyaları buraya bırakın veya yüklemek için tıklayın.</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title mb-0">Tarih</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div>
+                                            <div>     
+                                            <label class="form-label mb-0" for="first_date" >Başlangıç</label>
+                                                <input type="text" id="first_date" class="form-control" data-provider="flatpickr" name="date" data-date-format="d M, Y " value="{{update_data.date}}">
+                                            </div>
+                                                <br>
+                                            <div>
+                                            <label class="form-label mb-0" for="enddate">Bitiş</label>
+                                                <input type="text" id="enddate" class="form-control" data-provider="flatpickr" name="endname" data-date-format="d M, Y " value="{{update_data.enddate}}" >
+                                            </div>
+                                                <br>
+                                            <div>
+                                            <label for="job-category-Input" class="form-label">Yayınlanma Durumu</label>
+                                                <select class="form-control" name="release_status" id="job-category-Input" required>
+                                                {% for status in status_list %}
+                                                    {% if status == update_data.release_status %}
+                                                        <option selected  value = {{status}}>{{status}}</option>
+                                                    {% else %}
+                                                        <option  value = {{status}}>{{status}}</option>
+                                                    {% endif %}
+                                                {% endfor %}
+                                                </select>
+                                            </div>
+                                                    <div class="text-end mb-3" style="margin: 10px;">
+                                                        <button type="submit" class="btn btn-ghost-danger" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">Kaydet</button>
+                                                    </div>
+                                                    
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <!-- end card -->
+                                       
+                                    </div>
+                               
+                                </div>
+                                   
+                                   
+                            </div>
+                    
+                         </form>   <!-- end row -->
+                            
+            
+
+                    </div>
+                    <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+            </div>
+            <!-- end main content-->
+            {% endblock content %}
+{% block extra_js %}
+    <!-- ckeditor -->
+    <script src="{% static 'libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js'%}"></script>
+
+    <!-- dropzone js -->
+    <script src="{% static 'libs/dropzone/dist/dropzone-min.js'%}"></script>
+
+    <script src="{% static 'js/pages/ecommerce-product-create.init.js'%}"></script>
+    
+{% endblock extra_js %}

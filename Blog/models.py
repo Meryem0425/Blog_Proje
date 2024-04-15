@@ -8,6 +8,8 @@ class arama(models.Model):
     description = models.TextField(max_length=1000,blank=True)  
     image = models.ImageField(upload_to='static/images/' , blank=True, null=True)
     date = models.DateField() 
+    enddate = models.DateField()
+    release_status =models.TextField(max_length=100,blank=True)
     
 
 
