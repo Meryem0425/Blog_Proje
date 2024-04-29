@@ -3,6 +3,10 @@ from .models import *
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from .forms import *
+from django.core.files.storage import FileSystemStorage
+from datetime import datetime
+from dateutil.parser import parse
+
 
 
 
@@ -81,11 +85,58 @@ def blog_listesi(request):
     blog = arama.objects.all()
     return render(request, 'admin_dashboard/blog_listesi.html', {'blog_list':blog})
 
-
-
-
 def blog_olustur(request):
     return render(request,'admin_dashboard/blog_olustur.html')
+   
+def blog_guncelleme_sayfası(request):
+    print(request.POST)
+
+
+def blog_guncelleme_sayfası(request):
+    print(request.POST)
+    if request.method == 'POST':
+        # İstekten parametreleri al
+        name = request.POST.get("name")
+        description = request.POST.get("content")
+        date = request.POST.get("date")
+        image = request.FILES.get("file")
+        enddate = request.POST.get("enddate")
+        release_status = request.POST.get("release_status")
+        try: 
+           
+            formatted_date = parse(date).strftime("%Y-%m-%d")
+            formatted_date_end = parse(enddate).strftime("%Y-%m-%d")
+     
+        except ValueError as e:
+            
+            print("Hata:", e)
+        
+        # Dosya sistemine kaydet
+        dosya_kaydet = FileSystemStorage()
+        filename = dosya_kaydet.save(image.name, image) 
+        url = dosya_kaydet.url(filename)
+        print(url)
+        
+        # Modeli oluştur ve kaydet
+        mymodel = arama.objects.create(name=name, description=description, date=formatted_date, release_status=release_status, image=url, enddate=formatted_date_end)
+        mymodel.save()
+        
+        #Başarılı yanıtı döndür
+        return JsonResponse({
+            'success': True,
+            'message_type': 'message',
+            'message_level': 'success',
+            'message': 'Başarıyla Eklendi',
+
+        })
+    else:
+        return JsonResponse({
+            'success': False,
+            'message_type': 'message',
+            'message_level': 'false',
+            'message': 'Form yüklenmedi',
+
+        })
 
 def kullanıcı_listesi(request):
     return render(request,'admin_dashboard/kullanıcı_listesi.html')
@@ -100,7 +151,8 @@ def domain_listesi(request):
     return render (request,'admin_dashboard/domain_listesi.html')
 
 def proje_olustur(request):
-    return render (request,'admin_dashboard/proje_olustur.html')
+   return render(request,'admin_dashboard/proje_olustur.html')
+
 
 def projeler_listesi(request):
     return render (request,'admin_dashboard/projeler_listesi.html')
@@ -129,7 +181,6 @@ def update(request, blog_id):
          blog_update=arama.objects.get(id=blog_id)
          blog_update.name=form.cleaned_data['name']
          blog_update.description = form.cleaned_data['description']
-       
          blog_update.release_status=form.cleaned_data['release_status']
          blog_update.save()
          return redirect('blog_listesi')
@@ -142,6 +193,7 @@ def update(request, blog_id):
         update_image= update_data.image.url
         status_list={"Yayınlandı","Yayınlanmadı","Arşiv"}
         return render(request, 'admin_dashboard/duzenle.html', {'update_data': update_data,'update_image':update_image,'status_list':status_list})
+    
     
 
 

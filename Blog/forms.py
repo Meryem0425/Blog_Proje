@@ -2,16 +2,14 @@ from django import forms
 from .models import *
 
 class ListForm(forms.Form):
-
     name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control','placeholder':'Blog başlığı giriniz..'}), required=False)
-    description = forms.CharField(label='Description', max_length=1000, required=False)
-    date = forms.DateField(label='Start Date', required=False)
-    enddate = forms.DateField(label='End Date', required=False)
-    release_status = forms.CharField(label='Release Status', max_length=100, required=False)
+    description = forms.CharField( max_length=1000, required=False)
+    date = forms.DateField(required=False)
+    enddate = forms.DateField( required=False)
+    release_status = forms.CharField(max_length=100, required=False)
+    image=forms.ImageField(required=False)
 
-    class meta:
-        model=arama
-        fields=['name','description','date','enddate','release_status']
+
 
     def clean(self):
         cleaned_data = super().clean()
@@ -21,6 +19,7 @@ class ListForm(forms.Form):
             if end_date < start_date:
                 raise forms.ValidationError("Bitiş tarihi başlangıç tarihinden önce olamaz.")
 
+    
 
    
   

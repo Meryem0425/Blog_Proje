@@ -1,6 +1,19 @@
 {% extends 'my-partials/base.html' %}
 {% load static %}
 {% block title %} Ana Sayfa{% endblock title %}
+{%block css%}
+    <style>
+        @media screen and (max-width: 600px) {
+            .deneme {
+              font-size: 14px; /* Ekran genişliği 600 piksel veya daha az ise yazı tipi boyutunu küçült */
+              margin: 10px; /* Kenar boşluğunu küçült */
+              
+                                   
+        
+            }
+          } 
+    </style>
+{%endblock css%}
 
 
 {%block content%}       
@@ -17,9 +30,13 @@
 
                             <div class="hstack gap-2 justify-content-left">
                                 <div class="text-left mb-5 ">
-                                    <p class="ana-slogan">“Sanal Gerçeklik ile Gözlerinizin <br> Önünde Gerçeğe Dönüşsün”</p>
+                                    <p class="deneme" style="color:white;
+                                    font-size: 27px;
+                                    font-family: Helvetica, sans-serif;
+                                   
+                                   ">“Sanal Gerçeklik ile Gözlerinizin <br> Önünde Gerçeğe Dönüşsün”</p>
                                     
-                                    <a href= "" class="btn btn-danger" style="margin-left: -100px;">Hadi Başlayalım <i class="ri-arrow-down-line align-middle ms-1"></i></a>
+                                    <a href= "" class="btn btn-danger" style="float: center;">Hadi Başlayalım <i class="ri-arrow-down-line align-middle ms-1"></i></a>
                                     
                                 </div>
                             </div>
@@ -214,7 +231,13 @@
                                             Sanal Gerçekliğin Tarihçesi:
                                         Sanal gerçeklik fikri, 20. yüzyılın ortalarına kadar gitse de, teknolojinin bugünkü şeklini alması uzun bir süreç gerektirdi. İlk VR deneyimleri, basit grafikler ve sınırlı hareket özgürlüğü ile karakterize edilirken, zamanla teknolojik ilerlemeler sayesinde daha etkileyici ve gerçekçi deneyimler sunulmaya başlandı. İlk VR başlıkları ve kontrol cihazları, kullanıcıların sanal dünyada etkileşime girmesini sağladı ve bu teknolojiyi daha geniş kitlelere ulaştırdı.
                                         </p>
+                                        
                                     </div>
+                                  
+                                </div>
+                                
+                                <div>
+                                    <a href={% url "blogs" %} class="btn btn-danger">Daha Fazla <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -226,7 +249,7 @@
                             </div>
                         </div><!--end col-->
                 </div><!--end row-->
-                <a href={% url "blogs" %}  class="btn btn-danger" style="position: relative; top: -0px;">Daha Fazla<i class="ri-arrow-right-line align-bottom"></i></a>
+                
             </div><!-- end container -->
         </section><!-- end features -->
 

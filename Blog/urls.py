@@ -10,9 +10,11 @@ urlpatterns = [
     path('blogs/',views.blogs, name="blogs"),
     path('blog_detail/<int:blog_id>/',views.blog_details, name="blog_detail"),
     path('search_products/', views.search_products, name='search_products'),
+
     path('blog/admin/',views.admin,name="admin"),
     path('blog/admin/blog_listesi',views.blog_listesi,name="blog_listesi"),
     path('blog/admin/blog_olustur',views.blog_olustur,name="blog_olustur"),
+    path('blog_guncelleme_sayfası',views.blog_guncelleme_sayfası,name="blog_guncelleme_sayfası"),
     path('blog/admin/kullanıcı_listesi',views.kullanıcı_listesi,name="kullanıcı_listesi"),
     path('blog/admin/musteri_listesi',views.musteri_listesi,name="musteri_listesi"),
     path('blog/admin/hosting_listesi',views.hosting_listesi,name="hosting_listesi"),
